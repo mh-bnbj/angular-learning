@@ -1,25 +1,48 @@
-<h1>password Generator</h1>
-<div>
-  <label>Length</label>
-  <input />
+<div class="container mt-6">
+	<div class="columns is-centered">
+		<div class="box column is-one-third">
+			<h1 class="title has-text-centered">password Generator</h1>
+
+			<div class="field">
+				<label>Length</label>
+				<br />
+				<input class="input" type="text" (input)="onChangeLength($any($event.target).value)" />
+			</div>
+
+			<div class="field">
+				<div class="control">
+					<label class="checkbox">
+						<input type="checkbox" (change)="onChangeLatter()">
+						User Latter
+					</label>
+				</div>
+			</div>
+			<div class="field">
+				<div class="control">
+					<label class="checkbox">
+						<input type="checkbox" (change)="onChangeNumber()">
+						User number
+					</label>
+				</div>
+			</div>
+			<div class="field">
+				<div class="control">
+					<label class="checkbox">
+						<input type="checkbox" (change)="onChangeSymbuls()">
+						User symbuls
+					</label>
+				</div>
+			</div>
+
+			<button (click)="myfunction()" [disabled]="!(length && (includeLatters || includeSymbuls || includeNumbers))"
+				class="button is-link is-fullwidth">Generate!</button>
+
+			<div class="box mt-4" *ngIf="password">
+				<label>your password is : {{password}} </label>
+				<input class="input" type="text" [value]="getPassword()">
+			</div>
+		</div>
+	</div>
 </div>
 
-<div>
-  <label for="">User Latter</label>
-  <input type="checkbox" name="" id="">
-</div>
-<div>
-  <label for="">User number</label>
-  <input type="checkbox" name="" id="">
-</div>
-<div>
-  <label for="">User symbuls</label>
-  <input type="checkbox" name="" id="">
-</div>
-<button (click)="myfunction()">Generate!</button>
-
-
-<div>
-  <label for="">your password is {{password}}</label>
-  <input type="text" [value]="getPassword()">
-</div>
+{{length}}
