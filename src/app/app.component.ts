@@ -7,8 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'GeneratePassword';
+
+  password: string = '';
+
   myfunction(){
-    console.log("clicked");
+    this .password = "your password!";
   }
 }
 
