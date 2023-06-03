@@ -8,10 +8,18 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'GeneratePassword';
 
-  password: string = '';
+  password: string;
+
+  constructor(){
+    this.password="";
+  }
 
   myfunction(){
     this .password = "your password!";
+  }
+
+  getPassword(){
+    return this.password;
   }
 }
 

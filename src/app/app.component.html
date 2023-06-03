@@ -18,7 +18,8 @@
 </div>
 <button (click)="myfunction()">Generate!</button>
 
+
 <div>
-  <label for="">your password</label>
-  <input type="text" [value]="password">
+  <label for="">your password is {{password}}</label>
+  <input type="text" [value]="getPassword()">
 </div>
